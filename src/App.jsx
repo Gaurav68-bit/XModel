@@ -146,59 +146,60 @@ return (
     {isModalOpen && (
       <div className="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
         <div className="modal-content bg-white p-6 rounded-lg shadow-lg" ref={modalRef}>
-          <div className="flex flex-col gap-4">
-            <label className="form-label">
-              Username:
-              <input
-                id="username"
-                type="text"
-                value={formData.username}
-                onChange={handleInputChange}
-                className="border border-gray-400 p-2 rounded w-full"
-              />
-              {errors.username && <p className="text-red-500 text-sm">{errors.username}</p>}
-            </label>
+        <form className="flex flex-col gap-4" onSubmit={(e) => handleSubmit(e)}>
+  <label className="form-label">
+    Username:
+    <input
+      id="username"
+      type="text"
+      value={formData.username}
+      onChange={handleInputChange}
+      className="border border-gray-400 p-2 rounded w-full"
+    />
+    {errors.username && <p className="text-red-500 text-sm">{errors.username}</p>}
+  </label>
 
-            <label>
-              Email:
-              <input
-                id="email"
-                type="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                className="border border-gray-400 p-2 rounded w-full"
-              />
-              {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
-            </label>
+  <label>
+    Email:
+    <input
+      id="email"
+      type="email"
+      value={formData.email}
+      onChange={handleInputChange}
+      className="border border-gray-400 p-2 rounded w-full"
+    />
+    {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+  </label>
 
-            <label>
-              Phone Number:
-              <input
-                id="phone"
-                type="text"
-                value={formData.phone}
-                onChange={handleInputChange}
-                className="border border-gray-400 p-2 rounded w-full"
-              />
-              {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
-            </label>
+  <label>
+    Phone Number:
+    <input
+      id="phone"
+      type="text"
+      value={formData.phone}
+      onChange={handleInputChange}
+      className="border border-gray-400 p-2 rounded w-full"
+    />
+    {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
+  </label>
 
-            <label>
-              Date of Birth:
-              <input
-                id="dob"
-                type="date"
-                value={formData.dob}
-                onChange={handleInputChange}
-                className="border border-gray-400 p-2 rounded w-full"
-              />
-              {errors.dob && <p className="text-red-500 text-sm">{errors.dob}</p>}
-            </label>
+  <label>
+    Date of Birth:
+    <input
+      id="dob"
+      type="date"
+      value={formData.dob}
+      onChange={handleInputChange}
+      className="border border-gray-400 p-2 rounded w-full"
+    />
+    {errors.dob && <p className="text-red-500 text-sm">{errors.dob}</p>}
+  </label>
 
-            <button className="submit-button bg-blue-500 text-white p-2 rounded" onClick={handleSubmit}>
-              Submit
-            </button>
-          </div>
+  <button type="submit" className="submit-button bg-blue-500 text-white p-2 rounded">
+    Submit
+  </button>
+</form>
+
         </div>
       </div>
     )}
