@@ -52,26 +52,102 @@ export default function App() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isModalOpen]);
 
-  return (
-    <div className="modal">
-      <div className="modal-content">
-    <div className="main-container">
-      <h1 className="heading">User Details Modal</h1>
-      {!isModalOpen && (
-        <button
-          className="open-btn"
-          onClick={() => setIsModalOpen(true)}
-        >
-          Open Form
-        </button>
-      )}
+//   return (
+//     <div className="modal">
+//       <div className="modal-content">
+//     <div className="main-container">
+//       <h1 className="heading">User Details Modal</h1>
+//       {!isModalOpen && (
+//         <button
+//           className="open-btn"
+//           onClick={() => setIsModalOpen(true)}
+//         >
+//           Open Form
+//         </button>
+//       )}
 
-      {isModalOpen && (
-        <div className="modal-content fixed bg-white p-6 rounded-lg shadow-lg z-10" ref={modalRef}>
+//       {isModalOpen && (
+//         <div className="modal-content fixed bg-white p-6 rounded-lg shadow-lg z-10" ref={modalRef}>
+//           <div className="flex flex-col gap-4">
+//           {/* <label for="validationDefault01" class="form-label">First name</label>
+//           <input type="text" class="form-control" id="validationDefault01" value="Mark" required> */}
+//           <label for="validationDefault01" className="form-label">
+//               Username:
+//               <input
+//                 id="username"
+//                 type="text"
+//                 value={formData.username}
+//                 onChange={handleInputChange}
+//                 className="border border-gray-400 p-2 rounded w-full"
+//               />
+//               {errors.username && <p className="text-red-500 text-sm">{errors.username}</p>}
+//             </label>
+
+//             <label>
+//               Email:
+//               <input
+//                 id="email"
+//                 type="email"
+//                 value={formData.email}
+//                 onChange={handleInputChange}
+//                 className="border border-gray-400 p-2 rounded w-full"
+//               />
+//               {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+//             </label>
+
+//             <label>
+//               Phone Number:
+//               <input
+//                 id="phone"
+//                 type="text"
+//                 value={formData.phone}
+//                 onChange={handleInputChange}
+//                 className="border border-gray-400 p-2 rounded w-full"
+//               />
+//               {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
+//             </label>
+
+//             <label>
+//               Date of Birth:
+//               <input
+//                 id="dob"
+//                 type="date"
+//                 value={formData.dob}
+//                 onChange={handleInputChange}
+//                 className="border border-gray-400 p-2 rounded w-full"
+//               />
+//               {errors.dob && <p className="text-red-500 text-sm">{errors.dob}</p>}
+//             </label>
+
+            
+
+//             <button className="submit-button " onClick={handleSubmit}>
+//               Submit
+//             </button>
+//           </div>
+//         </div>
+//       )}
+//     </div>
+//     </div>
+//     </div>
+//   );
+// }
+
+return (
+  <div className="main-container">
+    <h1 className="heading">User Details Modal</h1>
+
+    {!isModalOpen && (
+      <button className="open-btn" onClick={() => setIsModalOpen(true)}>
+        Open Form
+      </button>
+    )}
+
+    {isModalOpen && (
+      <div className="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
+        <div className="modal-content bg-white p-6 rounded-lg shadow-lg" ref={modalRef}>
           <div className="flex flex-col gap-4">
-          {/* <label for="validationDefault01" class="form-label">First name</label>
-          <input type="text" class="form-control" id="validationDefault01" value="Mark" required> */}
-          <label for="validationDefault01" className="form-label">
+            <label className="form-label">
               Username:
               <input
                 id="username"
@@ -119,56 +195,12 @@ export default function App() {
               {errors.dob && <p className="text-red-500 text-sm">{errors.dob}</p>}
             </label>
 
-            
-
-            <button className="submit-button " onClick={handleSubmit}>
+            <button className="submit-button bg-blue-500 text-white p-2 rounded" onClick={handleSubmit}>
               Submit
             </button>
           </div>
         </div>
-      )}
-    </div>
-    </div>
-    </div>
-  );
-}
-
-
-// import React, { useState } from "react";
-// import "./App.css"; // Link to your CSS
-
-// function UserDetailsModal() {
-//   const [showModal, setShowModal] = useState(false);
-
-//   return (
-//     <div className="main-container">
-//       <h1 className="heading">User Details Modal</h1>
-//       <button className="open-btn" onClick={() => setShowModal(true)}>
-//         Open Form
-//       </button>
-
-//       {showModal && (
-//         <div className="modal">
-//           <div className="modal-content">
-//             <h2>Fill Details</h2>
-//             <label>Username:</label>
-//             <input type="text" placeholder="Enter username" />
-//             <label>Email Address:</label>
-//             <input type="email" placeholder="Enter email" />
-//             <label>Phone Number:</label>
-//             <input type="tel" placeholder="Enter phone number" />
-//             <label>Date of Birth:</label>
-//             <input type="date" />
-//             <button className="submit-button">Submit</button>
-//           </div>
-//         </div>
-//       )}
-//     </div>
-//   );
-// }
-
-// export default UserDetailsModal;
-
-
-
-
+      </div>
+    )}
+  </div>
+)}
