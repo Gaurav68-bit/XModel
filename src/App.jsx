@@ -53,6 +53,8 @@ export default function App() {
   }, [isModalOpen]);
 
   return (
+    <div className="modal">
+      <div className="modal-content">
     <div className="main-container">
       <h1 className="heading">User Details Modal</h1>
       {!isModalOpen && (
@@ -92,7 +94,7 @@ export default function App() {
               />
               {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
             </label>
-            
+
             <label>
               Phone Number:
               <input
@@ -119,12 +121,14 @@ export default function App() {
 
             
 
-            <button className="submit-button bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700" onClick={handleSubmit}>
+            <button className="submit-button " onClick={handleSubmit}>
               Submit
             </button>
           </div>
         </div>
       )}
+    </div>
+    </div>
     </div>
   );
 }
